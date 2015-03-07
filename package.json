@@ -1,0 +1,42 @@
+{
+  "name": "example-browserify-karma-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roblayton/example-browserify-karma-gulp"
+  },
+  "keywords": [
+    "html5",
+    "canvas",
+    "javascript"
+  ],
+  "author": "Rob Layton <hire@roblayton.com> (http://www.roblayton.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roblayton/example-browserify-karma-gulp/issues"
+  },
+  "homepage": "https://github.com/roblayton/example-browserify-karma-gulp",
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.2",
+    "gulp-karma": "0.0.4",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-browserify": "^4.0.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.3.5",
+    "karma-mocha": "^0.1.10",
+    "karma-opera-launcher": "^0.1.0",
+    "karma-safari-launcher": "^0.1.1",
+    "mocha": "^2.2.0",
+    "sinon": "^1.13.0",
+    "supertest": "^0.15.0"
+  }
+}

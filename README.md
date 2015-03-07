@@ -1,1 +1,1 @@
-# example-browserify-karma-gulp
+# example-node-karma-gulp

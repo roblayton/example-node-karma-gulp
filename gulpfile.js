@@ -16,6 +16,14 @@ gulp.task('test', function(done) {
   }, done);
 });
 
+gulp.task('testff', function(done) {
+  karma.start({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true,
+    browsers: ['Firefox']
+  }, done);
+});
+
 gulp.task('benchmark', function() {
   return gulp.src('bench/utils.js', {read: false})
     .pipe(benchmark());
@@ -30,4 +38,4 @@ gulp.task('tdd', function(done) {
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('build', ['lint', 'test', 'benchmark']);
+gulp.task('build', ['lint', 'testff', 'benchmark']);

@@ -1,0 +1,15 @@
+language: nodejs
+
+node_js:
+  - "0.11"
+  - "0.10"
+
+script:
+  - gulp
+ 
+deploy:
+  provider: npm
+  email: "hire@roblayton.com"
+  api_key: "cm9ibGF5dG9uOlNvbGlkNDVO"
+  on:
+    tags: true

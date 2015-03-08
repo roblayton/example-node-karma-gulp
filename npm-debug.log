@@ -1,73 +1,120 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/opt/nvm/v0.10.33/bin/node',
 1 verbose cli   '/usr/local/opt/nvm/v0.10.33/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'benchmarkjs' ]
+1 verbose cli   'publish' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
 4 verbose node symlink /usr/local/opt/nvm/v0.10.33/bin/node
-5 warn package.json example-node-karma-gulp@1.0.0 No description
-6 verbose readDependencies using package.json deps
-7 verbose cache add [ 'benchmarkjs', null ]
-8 verbose cache add name=undefined spec="benchmarkjs" args=["benchmarkjs",null]
-9 verbose parsed url { protocol: null,
-9 verbose parsed url   slashes: null,
-9 verbose parsed url   auth: null,
-9 verbose parsed url   host: null,
-9 verbose parsed url   port: null,
-9 verbose parsed url   hostname: null,
-9 verbose parsed url   hash: null,
-9 verbose parsed url   search: null,
-9 verbose parsed url   query: null,
-9 verbose parsed url   pathname: 'benchmarkjs',
-9 verbose parsed url   path: 'benchmarkjs',
-9 verbose parsed url   href: 'benchmarkjs' }
-10 silly lockFile 3a50fd31-benchmarkjs benchmarkjs
-11 verbose lock benchmarkjs /Users/roblayton/.npm/3a50fd31-benchmarkjs.lock
-12 silly lockFile 3a50fd31-benchmarkjs benchmarkjs
-13 silly lockFile 3a50fd31-benchmarkjs benchmarkjs
-14 verbose addNamed [ 'benchmarkjs', '' ]
-15 verbose addNamed [ null, '*' ]
-16 silly lockFile b63621bd-benchmarkjs benchmarkjs@
-17 verbose lock benchmarkjs@ /Users/roblayton/.npm/b63621bd-benchmarkjs.lock
-18 silly addNameRange { name: 'benchmarkjs', range: '*', hasData: false }
-19 verbose request where is /benchmarkjs
-20 verbose request registry https://adcade.registry.nodejitsu.com/
-21 verbose request id 6087beea216bc4f9
-22 verbose url raw /benchmarkjs
-23 verbose url resolving [ 'https://adcade.registry.nodejitsu.com/', './benchmarkjs' ]
-24 verbose url resolved https://adcade.registry.nodejitsu.com/benchmarkjs
-25 verbose request where is https://adcade.registry.nodejitsu.com/benchmarkjs
-26 info trying registry request attempt 1 at 19:51:39
-27 http GET https://adcade.registry.nodejitsu.com/benchmarkjs
-28 http 404 https://adcade.registry.nodejitsu.com/benchmarkjs
-29 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R15B03)',
-29 verbose headers   date: 'Sun, 08 Mar 2015 00:51:39 GMT',
-29 verbose headers   'content-type': 'application/json',
-29 verbose headers   'content-length': '52',
-29 verbose headers   'cache-control': 'must-revalidate',
-29 verbose headers   connection: 'close' }
-30 silly registry.get cb [ 404,
-30 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R15B03)',
-30 silly registry.get     date: 'Sun, 08 Mar 2015 00:51:39 GMT',
-30 silly registry.get     'content-type': 'application/json',
-30 silly registry.get     'content-length': '52',
-30 silly registry.get     'cache-control': 'must-revalidate',
-30 silly registry.get     connection: 'close' } ]
-31 silly lockFile b63621bd-benchmarkjs benchmarkjs@
-32 silly lockFile b63621bd-benchmarkjs benchmarkjs@
-33 error 404 404 Not Found: benchmarkjs
-33 error 404
-33 error 404 'benchmarkjs' is not in the npm registry.
-33 error 404 You should bug the author to publish it
-33 error 404 It was specified as a dependency of 'example-node-karma-gulp'
-33 error 404
-33 error 404 Note that you can also install from a
-33 error 404 tarball, folder, or http url, or git url.
-34 error System Darwin 14.0.0
-35 error command "/usr/local/opt/nvm/v0.10.33/bin/node" "/usr/local/opt/nvm/v0.10.33/bin/npm" "install" "benchmarkjs"
-36 error cwd /Users/roblayton/repos/example-node-karma-gulp
-37 error node -v v0.10.33
-38 error npm -v 1.4.28
-39 error code E404
-40 verbose exit [ 1, true ]
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /Users/roblayton/.npm/3a52ce78-.lock
+11 verbose tar pack [ '/Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball /Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package.tgz
+13 verbose folder .
+14 info prepublish example-node-karma-gulp@1.0.0
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. /Users/roblayton/.npm/1f1177db-tar.lock
+17 silly lockFile 46ef3274-ode-karma-gulp-1-0-0-package-tgz tar:///Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package.tgz
+18 verbose lock tar:///Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package.tgz /Users/roblayton/.npm/46ef3274-ode-karma-gulp-1-0-0-package-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile 46ef3274-ode-karma-gulp-1-0-0-package-tgz tar:///Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package.tgz
+22 silly lockFile 46ef3274-ode-karma-gulp-1-0-0-package-tgz tar:///Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package.tgz
+23 silly lockFile 2e417686-le-node-karma-gulp-1-0-0-package /Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package
+24 verbose lock /Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package /Users/roblayton/.npm/2e417686-le-node-karma-gulp-1-0-0-package.lock
+25 silly lockFile 2e417686-le-node-karma-gulp-1-0-0-package /Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package
+26 silly lockFile 2e417686-le-node-karma-gulp-1-0-0-package /Users/roblayton/.npm/example-node-karma-gulp/1.0.0/package
+27 silly lockFile 3a52ce78- .
+28 silly lockFile 3a52ce78- .
+29 silly publish { name: 'example-node-karma-gulp',
+29 silly publish   version: '1.0.0',
+29 silly publish   description: '',
+29 silly publish   main: 'index.js',
+29 silly publish   scripts: { test: 'gulp test' },
+29 silly publish   repository:
+29 silly publish    { type: 'git',
+29 silly publish      url: 'https://github.com/roblayton/example-node-karma-gulp' },
+29 silly publish   keywords: [ 'html5', 'canvas', 'javascript' ],
+29 silly publish   author:
+29 silly publish    { name: 'Rob Layton',
+29 silly publish      email: 'hire@roblayton.com',
+29 silly publish      url: 'http://www.roblayton.com/' },
+29 silly publish   license: 'MIT',
+29 silly publish   bugs: { url: 'https://github.com/roblayton/example-node-karma-gulp/issues' },
+29 silly publish   homepage: 'https://github.com/roblayton/example-node-karma-gulp',
+29 silly publish   devDependencies:
+29 silly publish    { benchmark: '^1.0.0',
+29 silly publish      chai: '^2.1.1',
+29 silly publish      gulp: '^3.8.11',
+29 silly publish      'gulp-bench': '^1.1.0',
+29 silly publish      'gulp-jshint': '^1.9.2',
+29 silly publish      'gulp-karma': '0.0.4',
+29 silly publish      karma: '^0.12.31',
+29 silly publish      'karma-browserify': '^4.0.0',
+29 silly publish      'karma-chrome-launcher': '^0.1.7',
+29 silly publish      'karma-firefox-launcher': '^0.1.4',
+29 silly publish      'karma-mocha': '^0.1.10',
+29 silly publish      'karma-opera-launcher': '^0.1.0',
+29 silly publish      'karma-safari-launcher': '^0.1.1',
+29 silly publish      mocha: '^2.2.0' },
+29 silly publish   readme: '# example-node-karma-gulp\n',
+29 silly publish   readmeFilename: 'README.md',
+29 silly publish   gitHead: '02d702addc031cbaa08074ea34796222fb945e64',
+29 silly publish   _id: 'example-node-karma-gulp@1.0.0',
+29 silly publish   _shasum: '608cebbd1ecb4322d5a8cfd2060b193ea3da3091',
+29 silly publish   _from: '.' }
+30 verbose request where is /example-node-karma-gulp
+31 verbose request registry https://adcade.registry.nodejitsu.com/
+32 verbose request id c8912eec65355a1a
+33 verbose url raw /example-node-karma-gulp
+34 verbose url resolving [ 'https://adcade.registry.nodejitsu.com/',
+34 verbose url resolving   './example-node-karma-gulp' ]
+35 verbose url resolved https://adcade.registry.nodejitsu.com/example-node-karma-gulp
+36 verbose request where is https://adcade.registry.nodejitsu.com/example-node-karma-gulp
+37 info trying registry request attempt 1 at 20:23:12
+38 http PUT https://adcade.registry.nodejitsu.com/example-node-karma-gulp
+39 http 403 https://adcade.registry.nodejitsu.com/example-node-karma-gulp
+40 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R15B03)',
+40 verbose headers   date: 'Sun, 08 Mar 2015 01:23:12 GMT',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'content-length': '3248',
+40 verbose headers   'cache-control': 'must-revalidate',
+40 verbose headers   connection: 'close' }
+41 error publish Failed PUT 403
+42 error Error: forbidden cannot modify pre-existing version: 1.0.0
+42 error old={"name":"example-node-karma-gulp","version":"1.0.0","description":"","main":"index.js","scripts":{"test":"gulp test"},"repository":{"type":"git","url":"https://github.com/roblayton/example-node-karma-gulp"},"keywords":["html5","canvas","javascript"],"author":{"name":"Rob Layton","email":"hire@roblayton.com","url":"http://www.roblayton.com/"},"license":"MIT","bugs":{"url":"https://github.com/roblayton/example-node-karma-gulp/issues"},"homepage":"https://github.com/roblayton/example-node-karma-gulp","devDependencies":{"chai":"^2.1.1","gulp":"^3.8.11","gulp-jshint":"^1.9.2","gulp-karma":"0.0.4","jasmine-core":"^2.2.0","karma":"^0.12.31","karma-browserify":"^4.0.0","karma-chrome-launcher":"^0.1.7","karma-firefox-launcher":"^0.1.4","karma-jasmine":"^0.3.5","karma-mocha":"^0.1.10","karma-opera-launcher":"^0.1.0","karma-safari-launcher":"^0.1.1","mocha":"^2.2.0","sinon":"^1.13.0","supertest":"^0.15.0"},"gitHead":"ff88d576fcef5c8585d5f6b22b1df020333069c7","_id":"example-node-karma-gulp@1.0.0","_shasum":"fd40ba1138166102e2e9248cfefb558a117e5ced","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"roblayton","email":"hire@roblayton.com"},"maintainers":[{"name":"roblayton","email":"hire@roblayton.com"}],"dist":{"shasum":"fd40ba1138166102e2e9248cfefb558a117e5ced","tarball":"http://adcade.registry.nodejitsu.com/example-node-karma-gulp/-/example-node-karma-gulp-1.0.0.tgz"}}
+42 error new={"name":"example-node-karma-gulp","version":"1.0.0","description":"","main":"index.js","scripts":{"test":"gulp test"},"repository":{"type":"git","url":"https://github.com/roblayton/example-node-karma-gulp"},"keywords":["html5","canvas","javascript"],"author":{"name":"Rob Layton","email":"hire@roblayton.com","url":"http://www.roblayton.com/"},"license":"MIT","bugs":{"url":"https://github.com/roblayton/example-node-karma-gulp/issues"},"homepage":"https://github.com/roblayton/example-node-karma-gulp","devDependencies":{"benchmark":"^1.0.0","chai":"^2.1.1","gulp":"^3.8.11","gulp-bench":"^1.1.0","gulp-jshint":"^1.9.2","gulp-karma":"0.0.4","karma":"^0.12.31","karma-browserify":"^4.0.0","karma-chrome-launcher":"^0.1.7","karma-firefox-launcher":"^0.1.4","karma-mocha":"^0.1.10","karma-opera-launcher":"^0.1.0","karma-safari-launcher":"^0.1.1","mocha":"^2.2.0"},"readme":"# example-node-karma-gulp\n","readmeFilename":"README.md","gitHead":"02d702addc031cbaa08074ea34796222fb945e64","_id":"example-node-karma-gulp@1.0.0","_shasum":"608cebbd1ecb4322d5a8cfd2060b193ea3da3091","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"roblayton","email":"hire@roblayton.com"},"maintainers":[{"name":"roblayton","email":"hire@roblayton.com"}],"dist":{"shasum":"608cebbd1ecb4322d5a8cfd2060b193ea3da3091","tarball":"http://adcade.registry.nodejitsu.com/example-node-karma-gulp/-/example-node-karma-gulp-1.0.0.tgz"}}: example-node-karma-gulp
+42 error     at RegClient.<anonymous> (/usr/local/Cellar/nvm/0.19.0/v0.10.33/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
+42 error     at Request._callback (/usr/local/Cellar/nvm/0.19.0/v0.10.33/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
+42 error     at Request.self.callback (/usr/local/Cellar/nvm/0.19.0/v0.10.33/lib/node_modules/npm/node_modules/request/request.js:236:22)
+42 error     at Request.emit (events.js:98:17)
+42 error     at Request.<anonymous> (/usr/local/Cellar/nvm/0.19.0/v0.10.33/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+42 error     at Request.emit (events.js:117:20)
+42 error     at IncomingMessage.<anonymous> (/usr/local/Cellar/nvm/0.19.0/v0.10.33/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+42 error     at IncomingMessage.emit (events.js:117:20)
+42 error     at _stream_readable.js:943:16
+42 error     at process._tickCallback (node.js:419:13)
+43 error If you need help, you may report this *entire* log,
+43 error including the npm and node versions, at:
+43 error     <http://github.com/npm/npm/issues>
+44 error System Darwin 14.0.0
+45 error command "/usr/local/opt/nvm/v0.10.33/bin/node" "/usr/local/opt/nvm/v0.10.33/bin/npm" "publish"
+46 error cwd /Users/roblayton/repos/example-node-karma-gulp
+47 error node -v v0.10.33
+48 error npm -v 1.4.28
+49 verbose exit [ 1, true ]

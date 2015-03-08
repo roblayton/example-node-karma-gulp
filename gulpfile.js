@@ -3,6 +3,7 @@ var karma = require('karma').server;
 var jshint = require('gulp-jshint');
 var benchmark = require('gulp-bench');
 var bump = require('gulp-bump');
+var shell = require('gulp-shell');
 
 gulp.task('lint', function() {
   return gulp.src('./src')
@@ -40,7 +41,7 @@ gulp.task('tdd', function(done) {
 
 gulp.task('bump', function() {
   gulp.src('package.json')
-    .pipe(bump({version:'major'}))
+    .pipe(bump({version: shell('echo git describe --tags').data}))
     .pipe(gulp.dest('./'));
 });
 

@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var karma = require('karma').server;
 var jshint = require('gulp-jshint');
+var benchmark = require('gulp-bench');
 
 gulp.task('lint', function() {
   return gulp.src('./src')
@@ -15,6 +16,11 @@ gulp.task('test', function(done) {
   }, done);
 });
 
+gulp.task('benchmark', function() {
+  return gulp.src('bench/utils.js', {read: false})
+    .pipe(benchmark());
+});
+
 gulp.task('tdd', function(done) {
   karma.start({
     configFile: __dirname + '/karma.conf.js',
@@ -23,4 +29,4 @@ gulp.task('tdd', function(done) {
   });
 });
 
-gulp.task('default', ['lint', 'test']);
+gulp.task('default', ['lint', 'test', 'benchmark']);

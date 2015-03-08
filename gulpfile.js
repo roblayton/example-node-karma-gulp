@@ -30,3 +30,4 @@ gulp.task('tdd', function(done) {
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);
+gulp.task('build', ['lint', 'test', 'benchmark']);

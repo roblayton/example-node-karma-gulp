@@ -13,3 +13,4 @@ deploy:
   api_key: "cm9ibGF5dG9uOlNvbGlkNDVO"
   on:
     tags: true
+    branch: master

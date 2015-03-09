@@ -17,7 +17,6 @@
     "canvas",
     "javascript"
   ],
-  "author": "Rob Layton <hire@roblayton.com> (http://www.roblayton.com/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/roblayton/example-node-karma-gulp/issues"

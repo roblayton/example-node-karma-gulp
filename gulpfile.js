@@ -68,8 +68,9 @@ gulp.task('tag', function() {
 });
 
 gulp.task('push_tags', function() {
-  gulp.src('./')
-    .pipe(git.push('origin', 'master', '--tags'))
+  git.push('origin', 'master', {args: '--tags'}, function(err) {
+    if (err) throw err;
+  })
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);

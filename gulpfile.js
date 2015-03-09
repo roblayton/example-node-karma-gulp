@@ -5,6 +5,7 @@ var benchmark = require('gulp-bench');
 var bump = require('gulp-bump');
 var exec = require('child_process').exec;
 var pkg = require('./package.json');
+var git = require('gulp-git');
 
 gulp.task('lint', function() {
   return gulp.src('./src')

@@ -8,6 +8,22 @@ var execSync = require('exec-sync');
 var pkg = require('./package.json');
 var git = require('gulp-git');
 
+var ERROR_LEVELS = ['error', 'warning'];
+
+function isFatal(level) {
+   return ERROR_LEVELS.indexOf(level) <= ERROR_LEVELS.indexOf(fatalLevel || 'error');
+}
+
+function handleError(level, error) {
+   gutil.log(error.message);
+   if (isFatal(level)) {
+      process.exit(1);
+   }
+}
+
+function onError(error) { handleError.call(this, 'error', error);}
+function onWarning(error) { handleError.call(this, 'warning', error);}
+
 gulp.task('lint', function() {
   return gulp.src('./src')
     .pipe(jshint())
@@ -52,7 +68,7 @@ gulp.task('validate_version', function() {
   exec('git tag', function(err, stdout) {
     var versions = stdout.split('\n');
     if ((versions.indexOf(pkg.version) > -1) === true) {
-      process.exit(1);
+      onError();
     }
   });
 });

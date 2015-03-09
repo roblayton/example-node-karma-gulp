@@ -48,7 +48,7 @@ gulp.task('tdd', function(done) {
 /*});*/
 
 gulp.task('tag', function() {
-  return gulp.src(['./package.json']).pipe(tag_version());
+  return gulp.src(['./package.json']).pipe(tagVersion());
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);

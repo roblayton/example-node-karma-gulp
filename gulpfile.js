@@ -52,7 +52,7 @@ gulp.task('validate_version', function() {
   exec('git tag', function(err, stdout) {
     var versions = stdout.split('\n');
     if ((versions.indexOf(pkg.version) > -1) === true) {
-      throw err;
+      process.exit(1);
     }
   });
 });

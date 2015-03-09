@@ -67,11 +67,11 @@ gulp.task('tag', function() {
     .pipe(git.tag(pkg.version, message))
 });
 
-//gulp.task('push_tags', function() {
-  //git.push('origin', 'master', {args: '--tags'}, function(err) {
-    //if (err) throw err;
-  //})
-//});
+gulp.task('push_tags', function() {
+  git.push('origin', 'master', {args: '--tags'}, function(err) {
+    if (err) throw err;
+  })
+});
 
 gulp.task('default', ['lint', 'test', 'benchmark']);
 gulp.task('build', ['lint', 'testff', 'benchmark', 'tag', 'push_tags']);

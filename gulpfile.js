@@ -61,11 +61,13 @@ gulp.task('release', function(done) {
 
         git.exec({args: 'config user.name ' + pkg.author}, function(err, stdout) {
           if (err) throw err;
-            git.commit(message);
-            git.tag(pkg.version, message);
-            git.push('origin', 'master', {args:'--tags'}, function(err) {
-              if (err) throw err;
-            })
+            git.commit(message, function() {
+              git.tag(pkg.version, message, function() {
+                git.push('origin', 'master', {args:'--tags'}, function(err) {
+                  if (err) throw err;
+                })
+              });
+            });
         });
 
       });

@@ -5,11 +5,11 @@ var benchmark = require('gulp-bench');
 var bump = require('gulp-bump');
 var execSync = require('exec-sync');
 
-gulp.task('lint', function() {
+gulp.task('lint', function(done) {
   return gulp.src('./src')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
-});
+}, done);
 
 gulp.task('test', function(done) {
   karma.start({
@@ -26,10 +26,10 @@ gulp.task('testff', function(done) {
   }, done);
 });
 
-gulp.task('benchmark', function() {
+gulp.task('benchmark', function(done) {
   return gulp.src('bench/utils.js', {read: false})
     .pipe(benchmark());
-});
+}, done);
 
 gulp.task('tdd', function(done) {
   karma.start({
@@ -39,7 +39,7 @@ gulp.task('tdd', function(done) {
   });
 });
 
-gulp.task('bump', function(type) {
+gulp.task('bump', function() {
   gulp.src('package.json')
     .pipe(bump({version: execSync('git describe --tags')}))
     .pipe(gulp.dest('./'));

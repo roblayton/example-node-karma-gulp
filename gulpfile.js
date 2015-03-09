@@ -52,4 +52,4 @@ gulp.task('tag', function() {
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('build', ['validate_version', 'lint', 'testff', 'benchmark', 'tag']);
+gulp.task('build', ['lint', 'testff', 'benchmark', 'tag']);

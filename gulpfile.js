@@ -45,7 +45,7 @@ gulp.task('validate_version', function() {
   exec('git tag', function(err, stdout) {
     var versions = stdout.split('\n');
     if ((versions.indexOf(p.version) > -1) === true) {
-      new Error('Update your package.json version');
+      throw new Error('Update your package.json version');
     }
   });
 });

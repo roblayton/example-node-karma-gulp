@@ -65,7 +65,6 @@ gulp.task('tag', function() {
   return gulp.src('package.json')
     .pipe(git.commit(message))
     .pipe(git.tag(pkg.version, message))
-    .pipe(git.push('origin', 'master', '--tags'))
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);

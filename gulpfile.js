@@ -46,7 +46,7 @@ gulp.task('tdd', function(done) {
   //gulp.src('package.json')
     //.pipe(bump({version: execSync('git describe --tags')}))
     //.pipe(gulp.dest('./'));
-/*});*/
+//});
 
 gulp.task('release', function(done) {
   exec('git tag', function(err, stdout) {

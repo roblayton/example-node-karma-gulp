@@ -7,6 +7,7 @@ var exec = require('child_process').exec;
 var execSync = require('exec-sync');
 var pkg = require('./package.json');
 var git = require('gulp-git');
+var gutil = require('gulp-util');
 
 var ERROR_LEVELS = ['error', 'warning'];
 

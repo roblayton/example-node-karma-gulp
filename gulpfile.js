@@ -4,8 +4,7 @@ var jshint = require('gulp-jshint');
 var benchmark = require('gulp-bench');
 var bump = require('gulp-bump');
 var exec = require('child_process').exec;
-var execSync = require('exec-sync');
-var tagVersion = require('gulp-tag-version');
+var pkg = require('./package.json');
 
 gulp.task('lint', function() {
   return gulp.src('./src')
@@ -48,7 +47,13 @@ gulp.task('tdd', function(done) {
 /*});*/
 
 gulp.task('tag', function() {
-  return gulp.src(['./package.json']).pipe(tagVersion());
+  var message = 'Release ' + pkg.version;
+
+  return gulp.src('./')
+    .pipe(git.commit(message))
+    .pipe(git.tag(pgk.version, message))
+    .pipe(git.push('origin', 'master', '--tags'))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);

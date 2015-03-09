@@ -51,7 +51,6 @@ gulp.task('tdd', function(done) {
 gulp.task('release', function(done) {
   exec('git tag', function(err, stdout) {
     var versions = stdout.split('\n');
-    var message = 'Release ' + pkg.version;
 
     if ((versions.indexOf(pkg.version) > -1) === true) {
       done(new Error('Version already exists'));

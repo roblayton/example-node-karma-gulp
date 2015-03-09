@@ -12,9 +12,8 @@ script:
 deploy:
   provider: npm
   email: hire@roblayton.com
-  api:
-    key:
-      secure: TSZAqSi8p85SMuvts4t6iE1hcSv98x6nvvkD83bA5n00qjQ+BG50XMHUOS7M7tC8CBIKxbtanrjiO3F8iO2SsxR9x2L+3ogcKWe66vJ7RE8CoMqvGdlOZYrqTUe0HwoE6pRN36WIj01MvbgT85qf4yJYw1gs8GRm3FCIpfzPdE4=
+  api_key:
+    secure: G6B4tRD7LcqDTLvAmJlLV/UM7UYcLnNdqi5+ZFZwfuz2FKYiCVMUdnEw8jOFlHvgsMMeiGx+T1UdrPTb8lB16oL9AiqviBcOERsI2uIDIvvj/xqMV8/fkuRCHGl5/Gl1/E99p0fIXUupkgWZoVuY0JVD1CXldRv2Jrij7Rgkalg=
   on:
     tags: true
     branch: master

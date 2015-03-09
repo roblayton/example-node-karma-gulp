@@ -59,8 +59,8 @@ gulp.task('tdd', function(done) {
 
 gulp.task('tag', function() {
   var message = 'Release ' + pkg.version;
-  execSync('git config --user.email ' + pkg.email);
-  execSync('git config --user.name ' + pkg.author);
+  execSync('git config user.email ' + pkg.email);
+  execSync('git config user.name ' + pkg.author);
 
   return gulp.src('./')
     .pipe(git.commit(message))

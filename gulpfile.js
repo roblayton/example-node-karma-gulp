@@ -72,5 +72,5 @@ gulp.task('release', function(done) {
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('test', ['lint', 'test', 'benchmark']);
+gulp.task('qa', ['lint', 'test', 'benchmark']);
 gulp.task('build', ['lint', 'testff', 'benchmark']);

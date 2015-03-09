@@ -67,6 +67,12 @@ gulp.task('tag', function() {
     .pipe(git.tag(pkg.version, message))
 });
 
+gulp.task('push_tags', function() {
+  git.push('--tags', function(err) {
+    if (err) throw err;
+  })
+});
+
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('release', ['validate_version', 'tag']);
+gulp.task('release', ['validate_version', 'tag', 'push_tags']);
 gulp.task('build', ['lint', 'testff', 'benchmark']);

@@ -60,7 +60,7 @@ gulp.task('release', function(done) {
         if (err) throw err;
         git.exec({args: 'config user.name ' + pkg.author}, function(err, stdout) {
           if (err) throw err;
-          git.exec({args:'tag -a' + pkg.version + ' -m ' + message}, function(err, stdout) {
+          git.exec({args:'tag -a ' + pkg.version + ' -m ' + message}, function(err, stdout) {
             if (err) throw err;
             git.exec({args:'push origin master --tags'}, function(err, stdout) {
               if (err) throw err;

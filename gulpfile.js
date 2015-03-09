@@ -52,7 +52,7 @@ gulp.task('validate_version', function() {
   exec('git tag', function(err, stdout) {
     var versions = stdout.split('\n');
     if ((versions.indexOf(pkg.version) > -1) === true) {
-      throw err;
+      throw err('version already exists');
     }
   });
 });
@@ -67,12 +67,6 @@ gulp.task('tag', function() {
     .pipe(git.tag(pkg.version, message))
 });
 
-gulp.task('push_tags', function() {
-  git.push('origin', 'master', {args: '--tags'}, function(err) {
-    if (err) throw err('version already exists');
-  })
-});
-
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('release', ['validate_version', 'tag', 'push_tags']);
+gulp.task('release', ['validate_version', 'tag']);
 gulp.task('build', ['lint', 'testff', 'benchmark']);

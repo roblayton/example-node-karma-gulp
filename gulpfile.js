@@ -48,31 +48,31 @@ gulp.task('tdd', function(done) {
     //.pipe(gulp.dest('./'));
 /*});*/
 
-gulp.task('validate_version', function(done) {
+gulp.task('release', function(done) {
   exec('git tag', function(err, stdout) {
     var versions = stdout.split('\n');
+    var message = 'Release ' + pkg.version;
+
     if ((versions.indexOf(pkg.version) > -1) === true) {
       done(new Error('Version already exists'));
+    } else {
+      git.exec({args: 'config user.email ' + pkg.email}, function(err, stdout) {
+        if (err) throw err;
+
+        git.exec({args: 'config user.name ' + pkg.author}, function(err, stdout) {
+          if (err) throw err;
+            git.commit(message);
+            git.tag(pkg.version, message);
+            git.push('origin', 'master', {args:'--tags'}, function(err) {
+              if (err) throw err;
+            })
+        });
+
+      });
     }
   });
 });
 
-gulp.task('tag', function() {
-  var message = 'Release ' + pkg.version;
-  execSync('git config user.email ' + pkg.email);
-  execSync('git config user.name ' + pkg.author);
-
-  return gulp.src('./')
-    .pipe(git.commit(message))
-    .pipe(git.tag(pkg.version, message))
-});
-
-gulp.task('push_tags', function() {
-  git.push('origin', 'master', {args:'--tags'}, function(err) {
-    if (err) throw err;
-  })
-});
-
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('release', ['validate_version', 'tag', 'push_tags']);
+gulp.task('test', ['lint', 'test', 'benchmark']);
 gulp.task('build', ['lint', 'testff', 'benchmark']);

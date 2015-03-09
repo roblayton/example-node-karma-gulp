@@ -62,10 +62,15 @@ gulp.task('tag', function() {
   execSync('git config user.email ' + pkg.email);
   execSync('git config user.name ' + pkg.author);
 
-  return gulp.src('package.json')
+  return gulp.src('./')
     .pipe(git.commit(message))
     .pipe(git.tag(pkg.version, message))
 });
 
+gulp.task('push_tags', function() {
+  gulp.src('./')
+    .pipe(git.push('origin', 'master', '--tags'))
+});
+
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('build', ['lint', 'testff', 'benchmark', 'tag']);
+gulp.task('build', ['lint', 'testff', 'benchmark', 'tag', 'push_tags']);

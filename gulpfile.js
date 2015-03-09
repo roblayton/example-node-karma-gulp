@@ -5,6 +5,7 @@ var benchmark = require('gulp-bench');
 var bump = require('gulp-bump');
 var exec = require('child_process').exec;
 var execSync = require('exec-sync');
+var tagVersion = require('gulp-tag-version');
 var p = require('./package.json');
 
 gulp.task('lint', function() {
@@ -41,20 +42,15 @@ gulp.task('tdd', function(done) {
   });
 });
 
-gulp.task('validate_version', function() {
-  exec('git tag', function(err, stdout) {
-    var versions = stdout.split('\n');
-    if ((versions.indexOf(p.version) > -1) === true) {
-      throw new Error('Update your package.json version');
-    }
-  });
-});
+//gulp.task('bump', function() {
+  //gulp.src('package.json')
+    //.pipe(bump({version: execSync('git describe --tags')}))
+    //.pipe(gulp.dest('./'));
+/*});*/
 
-gulp.task('bump', function() {
-  gulp.src('package.json')
-    .pipe(bump({version: execSync('git describe --tags')}))
-    .pipe(gulp.dest('./'));
+gulp.task('tag', function() {
+  return gulp.src(['./package.json']).pipe(tag_version());
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('build', ['validate_version', 'lint', 'testff', 'benchmark', 'bump']);
+gulp.task('build', ['validate_version', 'lint', 'testff', 'benchmark', 'tag']);

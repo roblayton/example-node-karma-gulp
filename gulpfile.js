@@ -4,7 +4,6 @@ var jshint = require('gulp-jshint');
 var benchmark = require('gulp-bench');
 var bump = require('gulp-bump');
 var execSync = require('exec-sync');
-//var exec = require('child_process').exec;
 
 gulp.task('lint', function() {
   return gulp.src('./src')

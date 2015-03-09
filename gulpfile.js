@@ -6,7 +6,6 @@ var bump = require('gulp-bump');
 var exec = require('child_process').exec;
 var execSync = require('exec-sync');
 var tagVersion = require('gulp-tag-version');
-var p = require('./package.json');
 
 gulp.task('lint', function() {
   return gulp.src('./src')

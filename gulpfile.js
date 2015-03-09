@@ -48,14 +48,14 @@ gulp.task('tdd', function(done) {
     //.pipe(gulp.dest('./'));
 /*});*/
 
-//gulp.task('validate_version', function() {
-  //exec('git tag', function(err, stdout) {
-    //var versions = stdout.split('\n');
-    //if ((versions.indexOf(p.version) > -1) === true) {
-      //throw err;
-    //}
-  //});
-//});
+gulp.task('validate_version', function() {
+  exec('git tag', function(err, stdout) {
+    var versions = stdout.split('\n');
+    if ((versions.indexOf(pkg.version) > -1) === true) {
+      throw err;
+    }
+  });
+});
 
 gulp.task('tag', function() {
   var message = 'Release ' + pkg.version;
@@ -69,9 +69,10 @@ gulp.task('tag', function() {
 
 gulp.task('push_tags', function() {
   git.push('origin', 'master', {args: '--tags'}, function(err) {
-    if (err) throw err;
+    if (err) throw err('version already exists');
   })
 });
 
 gulp.task('default', ['lint', 'test', 'benchmark']);
-gulp.task('build', ['lint', 'testff', 'benchmark', 'tag', 'push_tags']);
+gulp.task('release', ['validate_version', 'tag', 'push_tags']);
+gulp.task('build', ['lint', 'testff', 'benchmark']);

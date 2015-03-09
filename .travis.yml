@@ -9,18 +9,13 @@ before_script:
 - sh -e /etc/init.d/xvfb start
 script:
 - gulp build
-after_success:
-- git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- node ./node_modules/grunt-cli/bin/grunt release
 deploy:
   provider: npm
   email: hire@roblayton.com
-  api_key: cm9ibGF5dG9uOlNvbGlkNDVO
   on:
     tags: true
     branch: master
     all_branches: true
-env:
-  global:
-    secure: XrvloNPlNTnpJgLippU9q+yN40CeJ5WT5p9pRSv5+BdY2BwSaux27k/EJz+F9tdDq/GiEqQS1yZtAWD5WejYbh4HreNcjUE7+q0EAutVEFAmCM6oUDxcyYq789bP5BF7u4fe5GorLfBZWZlSb/tQE9K4PUxWmKVjsilEVMKpbmI=
+  api:
+    key:
+      secure: HT04VHcdgdtG3zUfVBYa4PGypIUxxUwqvq4S3EPE9+kF+VqJnVqqptrRq4RT7yb/Z2zVYwsHdbo5SpQEXTfzJSkyAf2lK/Nr1GcARh9VVmQ+h3MnW7r35PjXgHQ5QEL5rk1M4pzNvvYmQqNV9SCDjq2iI6aqLeJAFJ13YRmExuY=

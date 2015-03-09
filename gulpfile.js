@@ -4,6 +4,7 @@ var jshint = require('gulp-jshint');
 var benchmark = require('gulp-bench');
 var bump = require('gulp-bump');
 var exec = require('child_process').exec;
+var execSync = require('exec-sync');
 var pkg = require('./package.json');
 var git = require('gulp-git');
 
@@ -47,12 +48,23 @@ gulp.task('tdd', function(done) {
     //.pipe(gulp.dest('./'));
 /*});*/
 
+//gulp.task('validate_version', function() {
+  //exec('git tag', function(err, stdout) {
+    //var versions = stdout.split('\n');
+    //if ((versions.indexOf(p.version) > -1) === true) {
+      //throw err;
+    //}
+  //});
+//});
+
 gulp.task('tag', function() {
   var message = 'Release ' + pkg.version;
+  execSync('git config --user.email ' + pkg.email);
+  execSync('git config --user.name ' + pkg.author);
 
   return gulp.src('./')
     .pipe(git.commit(message))
-    .pipe(git.tag(pgk.version, message))
+    .pipe(git.tag(pkg.version, message))
     .pipe(git.push('origin', 'master', '--tags'))
     .pipe(gulp.dest('./'));
 });

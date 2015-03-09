@@ -62,7 +62,7 @@ gulp.task('tag', function() {
   execSync('git config user.email ' + pkg.email);
   execSync('git config user.name ' + pkg.author);
 
-  return gulp.src('./')
+  return gulp.src('package.json')
     .pipe(git.commit(message))
     .pipe(git.tag(pkg.version, message, function(err) {
       if (err) throw err;

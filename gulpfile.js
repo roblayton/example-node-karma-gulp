@@ -58,18 +58,17 @@ gulp.task('release', function(done) {
     } else {
       git.exec({args: 'config user.email ' + pkg.email}, function(err, stdout) {
         if (err) throw err;
-
         git.exec({args: 'config user.name ' + pkg.author}, function(err, stdout) {
           if (err) throw err;
-            git.exec('commit', message, function(err, stdout) {
+          git.exec({args:'commit -m ' + message}, function(err, stdout) {
+            if (err) throw err;
+            git.exec({args:'tag -a' + pkg.version + ' -m ' + message}, function(err, stdout) {
               if (err) throw err;
-                git.exec('tag', pkg.version, message, function(err, stdout) {
-                  if (err) throw err;
-                    git.exec('push', 'origin', 'master', function(err, stdout) {
-                      if (err) throw err;
-                    });
-                });
+              git.exec({args:'push origin master --tags'}, function(err, stdout) {
+                if (err) throw err;
+              });
             });
+          });
         });
       });
     }

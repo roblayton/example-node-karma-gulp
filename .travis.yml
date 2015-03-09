@@ -13,7 +13,7 @@ deploy:
   provider: npm
   email: hire@roblayton.com
   api_key:
-    secure: G6B4tRD7LcqDTLvAmJlLV/UM7UYcLnNdqi5+ZFZwfuz2FKYiCVMUdnEw8jOFlHvgsMMeiGx+T1UdrPTb8lB16oL9AiqviBcOERsI2uIDIvvj/xqMV8/fkuRCHGl5/Gl1/E99p0fIXUupkgWZoVuY0JVD1CXldRv2Jrij7Rgkalg=
+    secure: u/oUWnILUUUzcQzOcOwsGkDTfgJytUZGC9nF6fTMg8zNXtNIhlg+/zowFsrtEZ29icm9iXr2K/WNb9lQhMlPO8YKvKFJJD9XU6Z0w5gqq7+aN4sQEJHu7MNWWoOY8wLfYm0MMeBRT3QqoLKRa/OxjIyp4Vn9050F6NmRuaskc2o=
   on:
     tags: true
     branch: master

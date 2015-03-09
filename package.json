@@ -2,7 +2,7 @@
   "name": "example-node-karma-gulp",
   "author": "Rob Layton",
   "email": "hire@roblayton.com",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "",
   "main": "index.js",
   "scripts": {

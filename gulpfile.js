@@ -5,11 +5,11 @@ var benchmark = require('gulp-bench');
 var bump = require('gulp-bump');
 var execSync = require('exec-sync');
 
-gulp.task('lint', function(done) {
+gulp.task('lint', function() {
   return gulp.src('./src')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
-}, done);
+});
 
 gulp.task('test', function(done) {
   karma.start({
@@ -26,10 +26,10 @@ gulp.task('testff', function(done) {
   }, done);
 });
 
-gulp.task('benchmark', function(done) {
+gulp.task('benchmark', function() {
   return gulp.src('bench/utils.js', {read: false})
     .pipe(benchmark());
-}, done);
+});
 
 gulp.task('tdd', function(done) {
   karma.start({

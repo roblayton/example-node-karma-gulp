@@ -42,32 +42,18 @@ gulp.task('tdd', function(done) {
   });
 });
 
-//gulp.task('bump', function() {
-  //gulp.src('package.json')
-    //.pipe(bump({version: execSync('git describe --tags')}))
-    //.pipe(gulp.dest('./'));
-//});
-
 gulp.task('release', function(done) {
-  exec('git tag', function(err, stdout) {
-    var versions = stdout.split('\n');
-
-    if ((versions.indexOf(pkg.version) > -1) === true) {
-      done(new Error('Version already exists'));
-    } else {
-      git.exec({args: 'config user.email ' + pkg.email}, function(err, stdout) {
+  git.exec({args: 'config user.email ' + pkg.email}, function(err, stdout) {
+    if (err) throw err;
+    git.exec({args: 'config user.name ' + pkg.author}, function(err, stdout) {
+      if (err) throw err;
+      git.exec({args:'tag ' + pkg.version}, function(err, stdout) {
         if (err) throw err;
-        git.exec({args: 'config user.name ' + pkg.author}, function(err, stdout) {
+        git.exec({args:'push origin master --tags'}, function(err, stdout) {
           if (err) throw err;
-          git.exec({args:'tag ' + pkg.version}, function(err, stdout) {
-            if (err) throw err;
-            git.exec({args:'push origin master --tags'}, function(err, stdout) {
-              if (err) throw err;
-            });
-          });
         });
       });
-    }
+    });
   });
 });
 
